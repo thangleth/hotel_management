@@ -1,0 +1,14 @@
+.hms-color-light{
+    color: #92803d;
+}
+.hms-bg-normal{
+    background-color: #544427;
+}
+.hms-color-dark{
+    background-color: #92803d;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}

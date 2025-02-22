@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="container">
                 <div className="row">
                     <div className="col-3">
-                        <a className={`${bebas_neue.className} fs-4`} style={{ 'color': '#92803d' }} href="#">KNICKS</a>
+                        <a className={`${bebas_neue.className} fs-1 hms-color-light`} href="#">KNICKS</a>
                         <h6 className='text-white'>Hotel Luxury</h6>
                     </div>
                     <div className='col-3'>

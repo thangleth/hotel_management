@@ -3,6 +3,7 @@ import Footer from '@/components/common/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import Bottom from '@/components/common/Bottom';
+import '../../styles/global.css'
 
 export const metadata = {
   title: "Hotel Management Website",
