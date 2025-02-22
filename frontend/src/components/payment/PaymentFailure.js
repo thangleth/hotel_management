@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function PaymentFailure() {
     return (
         <>
@@ -5,7 +7,7 @@ export default function PaymentFailure() {
             <h5>Error Code: Error Description</h5>
             <p className="my-4">
                 <Link href='#' className="btn btn-dark">Home</Link>
-                <Link href='#' className="btn hms-color-dark">My DashBoard</Link>
+                <Link href='#' className="btn hms-color-dark ms-2">My DashBoard</Link>
             </p>
         </>
     )

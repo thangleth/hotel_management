@@ -1,5 +1,6 @@
 import PaymentSuccess from "@/components/payment/PaymentSuccess"
 import PaymentFailure from "@/components/payment/PaymentFailure";
+import Link from "next/link";
 
 export default function Page({ params }) {
     const slug = params.slug;
@@ -9,7 +10,7 @@ export default function Page({ params }) {
                 slug == 'success' && <PaymentSuccess />
             }
             {
-                slug == 'success' && <PaymentFailure />
+                slug == 'failure' && <PaymentFailure />
             }
         </section>
     )
