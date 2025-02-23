@@ -1,18 +1,13 @@
 import Link from "next/link";
 import BarChart from "@/components/user/BarChart";
+import DashboardSideBar from "@/components/user/DashboardSidebar";
 
 export default function Page() {
     return (
         <section className="container my-5">
             <div className="row">
                 <div className="col-md-4 col-12">
-                    <div className="list-group">
-                        <a className="list-group-item hms-bg-normal" href="#">Dashboard</a>
-                        <a className="list-group-item" href="#">Booking history</a>
-                        <a className="list-group-item" href="#">Payment logs</a>
-                        <a className="list-group-item" href="#">Update profile</a>
-                        <a className="list-group-item text-danger" href="#">Logout</a>
-                    </div>
+                    <DashboardSideBar />
                 </div>
                 <div className="col-md-8 col-12">
                     <div className="row">
@@ -33,7 +28,11 @@ export default function Page() {
                             </div>
                         </div>
                     </div>
-                    <BarChart />
+                    <div className="row my-4">
+                        <div className="col-12">
+                            <BarChart />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
