@@ -24,10 +24,10 @@ export default function Header() {
                             <a className="nav-link fw-bold text-white" href="#">Services</a>
                         </li>
                         <li className="nav-item me-3">
-                            <a className="nav-link fw-bold text-white" href="#">About us</a>
+                            <a className="nav-link fw-bold text-white" href="/about">About us</a>
                         </li>
                         <li className="nav-item me-3">
-                            <a className="nav-link fw-bold text-white" href="#">Contact</a>
+                            <a className="nav-link fw-bold text-white" href="/contact">Contact</a>
                         </li>
                         <li className="nav-item">
                             <a className="btn mt-1 fw-bold text-white hms-color-dark" href="#">Book Event</a>
