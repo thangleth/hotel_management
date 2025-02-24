@@ -12,7 +12,7 @@ export default function Page() {
                         </Link>
                         <div className="card-body hms-bg-normal">
                             <h5 className="card-title">
-                                <Link className="text-white" href='room-types'>Single Bedroom</Link>
+                                <Link className="text-white" href='/room-types/single-bedroom'>Single Bedroom</Link>
                             </h5>
                         </div>
                     </div>

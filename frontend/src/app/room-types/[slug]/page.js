@@ -25,21 +25,21 @@ export default function Page() {
                         <h5 className="card-header">Booking Form</h5>
                         <div className="card-body">
                             <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label"><b>Room Type: </b>Single Bedroom</label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label"><b>Room Type: </b>Single Bedroom</label>
                             </div>
                             <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label"><b>Charges: </b>150$/Night</label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label"><b>Charges: </b>150$/Night</label>
                             </div>
                             <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label"><b>Total Guest: </b></label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label"><b>Total Guest: </b></label>
                                 <input type="number" className="form-control" />
                             </div>
                             <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label"><b>Check-In: </b></label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label"><b>Check-In: </b></label>
                                 <input type="date" className="form-control" />
                             </div>
                             <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label"><b>Check-out: </b></label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label"><b>Check-out: </b></label>
                                 <input type="date" className="form-control" />
                             </div>
                             <Link href='/checkout' className="btn hms-color-dark mt-3">Confirm Booking</Link>
