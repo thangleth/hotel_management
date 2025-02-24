@@ -18,15 +18,27 @@ export default function Footer() {
                     </div>
                     <div className='col-3'>
                         <h4 className='text-white'>Contact</h4>
-                        <p><a href='#' className='text-white text-decoration-none'>Company</a></p>
-                        <p><a href='#' className='text-white text-decoration-none'>History</a></p>
-                        <p><a href='#' className='text-white text-decoration-none'>Career</a></p>
+                        <p>
+                            <a href='#' className='text-white text-decoration-none me-2'>
+                                <i className='fa fa-facebook'></i>
+                            </a>
+                            <a href='#' className='text-white text-decoration-none me-2'>
+                                <i className='fa fa-whatsapp'></i>
+                            </a>
+                            <a href='#' className='text-white text-decoration-none me-2'>
+                                <i className='fa fa-instagram'></i>
+                            </a>
+                            <a href='#' className='text-white text-decoration-none me-2'>
+                                <i className='fa fa-pinterest'></i>
+                            </a>
+                        </p>
+                        <p><a href='#' className='text-white text-decoration-none'>Send Message</a></p>
                     </div>
                     <div className='col-3'>
                         <h4 className='text-white'>Support</h4>
-                        <p><a href='#' className='text-white text-decoration-none'>Company</a></p>
-                        <p><a href='#' className='text-white text-decoration-none'>History</a></p>
-                        <p><a href='#' className='text-white text-decoration-none'>Career</a></p>
+                        <p><a href='#' className='text-white text-decoration-none'>Privacy Profile</a></p>
+                        <p><a href='#' className='text-white text-decoration-none'>Terms & Conditions</a></p>
+                        <p><a href='#' className='text-white text-decoration-none'>Help</a></p>
                     </div>
                 </div>
             </div>
