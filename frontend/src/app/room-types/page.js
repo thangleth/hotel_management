@@ -1,75 +1,53 @@
+import RoomType from "@/components/RoomType"
 import Link from "next/link"
 
-export default function Page() {
+async function getRoomType(page_no) {
+    const res = await fetch('http://127.0.0.1:8000/api/room-types/?page=' + page_no, { cache: 'no-store' })
+    const data = await res.json()
+    console.log("API Response:", data)
+    return data
+}
+
+export default async function Page({ searchParams }) {
+    const page = searchParams.page || 1
+    const roomtypes = await getRoomType(page)
+    const itemsPerPage = 2
+    const totalPages = Math.ceil(roomtypes.count / itemsPerPage);
+    const nextPage = parseInt(page) + parseInt(1)
+    let links = []
+    if (roomtypes.previous) {
+        links.push(<Link className="page-link" href={`/room-types/?page=${page - 1}`}>Previous</Link>)
+    }
+    for (let i = 1; i <= totalPages; i++) {
+        if (page == i) {
+            links.push(<Link className="page-link active" href={`/room-types/?page=${i}`}>{i}</Link>)
+        } else {
+            links.push(<Link className="page-link" href={`/room-types/?page=${i}`}>{i}</Link>)
+        }
+    }
+    if (roomtypes.next) {
+        links.push(<Link className="page-link" href={`/room-types/?page=${nextPage}`}>Next</Link>)
+    }
+
     return (
         <section className="container my-5">
-            <h3 className="my-5 text-center">Room Types (6)</h3>
+            <h3 className="my-5 text-center">Room Types ({roomtypes.count})</h3>
             <div className="row text-center">
-                <div className="col-4 mb-4">
-                    <div className="card">
-                        <Link href='room-types/single-bedroom'>
-                            <img src="thumb/thumb1.png" className="card-img-top" alt="Room Types"></img>
-                        </Link>
-                        <div className="card-body hms-bg-normal">
-                            <h5 className="card-title">
-                                <Link className="text-white" href='/room-types/single-bedroom'>Single Bedroom</Link>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 mb-4">
-                    <div className="card">
-                        <img src="thumb/thumb1.png" className="card-img-top" alt="Room Types"></img>
-                        <div className="card-body hms-bg-normal">
-                            <h5 className="card-title">
-                                <Link className="text-white" href='events'>Room Types 2</Link>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 mb-4">
-                    <div className="card">
-                        <img src="thumb/thumb1.png" className="card-img-top" alt="Room Types"></img>
-                        <div className="card-body hms-bg-normal">
-                            <h5 className="card-title">
-                                <Link className="text-white" href='online-booking'>Room Types 3</Link>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 mb-4">
-                    <div className="card">
-                        <Link href='room-types'>
-                            <img src="thumb/thumb1.png" className="card-img-top" alt="Room Types"></img>
-                        </Link>
-                        <div className="card-body hms-bg-normal">
-                            <h5 className="card-title">
-                                <Link className="text-white" href='room-types'>Room Types 1</Link>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 mb-4">
-                    <div className="card">
-                        <img src="thumb/thumb1.png" className="card-img-top" alt="Room Types"></img>
-                        <div className="card-body hms-bg-normal">
-                            <h5 className="card-title">
-                                <Link className="text-white" href='events'>Room Types 2</Link>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 mb-4">
-                    <div className="card">
-                        <img src="thumb/thumb1.png" className="card-img-top" alt="Room Types"></img>
-                        <div className="card-body hms-bg-normal">
-                            <h5 className="card-title">
-                                <Link className="text-white" href='online-booking'>Room Types 3</Link>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
+                {
+                    roomtypes.results.map((item, index) => (
+                        <RoomType item={item} key={index} />
+                    ))
+                }
+
             </div>
+
+            <nav className="text-center">
+                <ul className="pagination">
+                    {
+                        links.map((item, index) => (<li key={index} className="page-item">{item}</li>))
+                    }
+                </ul>
+            </nav>
         </section>
     )
 }

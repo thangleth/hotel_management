@@ -1,6 +1,12 @@
 import RoomTypeImages from "@/components/RoomTypeImages";
 import Link from "next/link";
 
+async function getRoomType(room_type_id) {
+    const res = await fetch('http://127.0.0.1:8000/api/room-types/' + room_type_id, { cache: 'no-store' })
+    const data = await res.json()
+    return data
+}
+
 export default function Page() {
     return (
         <section className="container my-5">
